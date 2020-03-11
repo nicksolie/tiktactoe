@@ -22,36 +22,56 @@
             <h3>Score</h3>
           </div>
         </div>
+        <form id="sign-up">
+          <legend>Sign Up</legend>
+          <input type="text" name=credentials[email] placeholder="example@email.com">
+          <input type="password" name=credentials[password] placeholder="Password">
+          <input type="password" name=credentials[password_comfirmation] placeholder="Comfirm Password">
+          <input type="submit" value="Sign Up">
+        </form>
+        <form id="sign-in">
+          <legend>Sign In</legend>
+          <input type="text" name="credentials[email]" placeholder="example@email.com">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="submit" value="Sign In">
+        </form>
+        <form id="change-password">
+          <legend>Change Password</legend>
+          <input type="password" name="credentials[old]" placeholder="Old Password">
+          <input type="password" name="credentials[new]" placeholder="New Password">
+          <input type="submit" value="Change Password">
+        </form>
+        <form id="sign-out">
+          <input type="submit" value="Sign Out">
+        </form>
         <div class="gameBoardContainer">
-          <div class="gameBoard">
-            <div class="tile-1">
+            <div id="tile-1"class="col-4 box">
               <h1>tile 1</h1>
             </div>
-            <div class="tile-2">
+            <div id="tile-2"class="col-4 box">
               <h1>tile 2</h1>
             </div>
-            <div class="tile-3">
+            <div id="tile-3"class="col-4 box">
               <h1>tile 3</h1>
             </div>
-            <div class="tile-4">
+            <div id="tile-4"class="col-4 box">
               <h1>tile 4</h1>
             </div>
-            <div class="tile-5">
+            <div id="tile-5"class="col-4 box">
               <h1>tile 5</h1>
             </div>
-            <div class="tile-6">
+            <div id="tile-6"class="col-4 box">
               <h1>tile 6</h1>
             </div>
-            <div class="tile-7">
+            <div id="tile-7"class="col-4 box">
               <h1>tile 7</h1>
             </div>
-            <div class="tile-8">
+            <div id="tile-8"class="col-4 box">
               <h1>tile 8</h1>
             </div>
-            <div class="tile-9">
+            <div id="tile-9"class="col-4 box">
               <h1>tile 9</h1>
             </div>
-          </div>
         </div>
       </main>
       <footer>
