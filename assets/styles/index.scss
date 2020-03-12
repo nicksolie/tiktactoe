@@ -1,1 +1,14 @@
 @import '~bootstrap/scss/bootstrap';
+
+.box {
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+.gameBoardContainer {
+  margin: 0px 100px;
+  max-width: 300px;
+}

@@ -3,24 +3,27 @@ let turn = 'x'
 // Take a blank tile and fill it
 const action = function (event) {
   event.preventDefault()
-  // what is the id number for the tile?
-  const choice = event.target.id
-  console.log(choice)
   // what is the current value of the tile?
-  const value = $(event.target).text()
-  if (choice !== 'x' || choice !== 'o') {
-    let value = $(event.target).text(turn)
+  let value = $(event.target).text()
+  if (value === 'x' || value === 'o') {
+    console.log('Stop!')
+  } else if (value !== 'x' || value !== 'o') {
+    value = $(event.target).text(turn)
+    if (turn === 'x') {
+      turn = 'o'
+    } else if (turn === 'o') {
+      turn = 'x'
+    }
   }
-  console.log(value)
   // if the space is not x or o then add it to the tile
-  if (turn === 'x') {
-    turn = 'o'
-  } else if (turn === 'o') {
-    turn = 'x'
-  }
+  // let currentValue = turn
+  // if (currentValue === 'x' || currentValue === 'o') {
+  //   currentValue = $(event.target).text(turn)
+  // }
 }
 
 module.exports = {
   turn,
   action
 }
+// if tile is not empty, return value?
