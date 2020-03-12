@@ -2,11 +2,12 @@ let turn = 'x'
 
 // Take a blank tile and fill it
 const action = function (event) {
+  $('#message').text('')
   event.preventDefault()
-  // what is the current value of the tile?
   let value = $(event.target).text()
+  // If tile has a mark, display error message
   if (value === 'x' || value === 'o') {
-    console.log('Stop!')
+    $('#message').text('Error, this tile is alredy in play!')
   } else if (value !== 'x' || value !== 'o') {
     value = $(event.target).text(turn)
     if (turn === 'x') {
@@ -15,11 +16,6 @@ const action = function (event) {
       turn = 'x'
     }
   }
-  // if the space is not x or o then add it to the tile
-  // let currentValue = turn
-  // if (currentValue === 'x' || currentValue === 'o') {
-  //   currentValue = $(event.target).text(turn)
-  // }
 }
 
 module.exports = {
