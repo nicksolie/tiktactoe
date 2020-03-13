@@ -7,7 +7,7 @@
 // require('./example')
 const authEvents = require('./auth/events.js')
 const boardEvents = require('./board/events.js')
-const apiEvents = require('./board/api.js')
+// const apiEvents = require('./board/api.js')
 
 $(() => {
   // your JS code goes here

@@ -44,11 +44,27 @@ const changePasswordFailure = function (error) {
   console.log('changePasswordFailure error is: ', error)
 }
 
+const signOutSuccess = function (data) {
+  $('#message').text('Sign out successfully.')
+  $('#message').removeClass()
+  $('#message').addClass('success')
+  console.log('Sign out data is: ', data)
+}
+
+const signOutFailure = function (error) {
+  $('#message').text('Change Password error')
+  $('#message').removeClass()
+  $('#message').addClass('failed')
+  console.log('changePasswordFailure error is: ', error)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
   signInFailure,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  signOutSuccess,
+  signOutFailure
 }

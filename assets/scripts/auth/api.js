@@ -22,7 +22,7 @@ const signIn = function (data) {
 }
 
 const changePassword = function (data) {
-  console.log('In api.js')
+  console.log('api, changePassword')
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
@@ -33,8 +33,20 @@ const changePassword = function (data) {
   })
 }
 
+const signOut = function (data) {
+  console.log('api, signOut')
+  return $.ajax({
+    url: config.apiUrl + '/sign-out',
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
-  changePassword
+  changePassword,
+  signOut
 }

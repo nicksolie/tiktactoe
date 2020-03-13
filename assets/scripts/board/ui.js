@@ -6,9 +6,9 @@ const startGameSuccess = function (data) {
   console.log('Success data is:', data)
 }
 
-const startGameFailure = function () {
+const startGameFailure = function (data) {
   console.log('startGameFailure pinged')
-  $('#message').text('Error has occured in Start Game')
+  $('#message').text('Error has occured in Start Game', data)
 }
 
 module.exports = {
