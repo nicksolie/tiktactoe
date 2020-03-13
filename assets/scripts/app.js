@@ -7,14 +7,16 @@
 // require('./example')
 const authEvents = require('./auth/events.js')
 const boardEvents = require('./board/events.js')
+const apiEvents = require('./board/api.js')
 
 $(() => {
   // your JS code goes here
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
-  $('#sign-out').on('click', authEvents.onSignOut)
-  $('.blank').on('click', boardEvents.action)
+  $('#sign-out').on('submit', authEvents.onSignOut)
+  $('.blank').on('click', boardEvents.onAction)
+  $('#start-game').on('submit', boardEvents.onStartGame)
 })
 
 // $('#sign-out').on('submit', authEvents.onSignOut)
