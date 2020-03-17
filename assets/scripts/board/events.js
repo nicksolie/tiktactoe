@@ -2,54 +2,81 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
 
-let turn = 'x'
+let turn = 'X'
+let gameBoard = ['', '', '', '', '', '', '', '', '']
+let isGameOver = false
+let turnCount = 0
 
-// Flip turn when called
-const turnFlip = function () {
-  if (turn === 'x') {
-    turn = 'o'
-  } else if (turn === 'o') {
-    turn = 'x'
+const winnerX = function (gameBoard) {
+  if (gameBoard[0] === 'X' && gameBoard[1] === 'X' && gameBoard[2] === 'X') { return true }
+  if (gameBoard[3] === 'X' && gameBoard[4] === 'X' && gameBoard[5] === 'X') { return true }
+  if (gameBoard[6] === 'X' && gameBoard[7] === 'X' && gameBoard[8] === 'X') { return true }
+  if (gameBoard[0] === 'X' && gameBoard[3] === 'X' && gameBoard[6] === 'X') { return true }
+  if (gameBoard[1] === 'X' && gameBoard[4] === 'X' && gameBoard[7] === 'X') { return true }
+  if (gameBoard[2] === 'X' && gameBoard[5] === 'X' && gameBoard[6] === 'X') { return true }
+  if (gameBoard[0] === 'X' && gameBoard[4] === 'X' && gameBoard[8] === 'X') { return true }
+  if (gameBoard[6] === 'X' && gameBoard[4] === 'X' && gameBoard[2] === 'X') { return true }
+  return false
+}
+
+const winnerO = function (gamboard) {
+  if (gameBoard[0] === 'O' && gameBoard[1] === 'O' && gameBoard[2] === 'O') { return true }
+  if (gameBoard[3] === 'O' && gameBoard[4] === 'O' && gameBoard[5] === 'O') { return true }
+  if (gameBoard[6] === 'O' && gameBoard[7] === 'O' && gameBoard[8] === 'O') { return true }
+  if (gameBoard[0] === 'O' && gameBoard[3] === 'O' && gameBoard[6] === 'O') { return true }
+  if (gameBoard[1] === 'O' && gameBoard[4] === 'O' && gameBoard[7] === 'O') { return true }
+  if (gameBoard[2] === 'O' && gameBoard[5] === 'O' && gameBoard[6] === 'O') { return true }
+  if (gameBoard[0] === 'O' && gameBoard[4] === 'O' && gameBoard[8] === 'O') { return true }
+  if (gameBoard[6] === 'O' && gameBoard[4] === 'O' && gameBoard[2] === 'O') { return true }
+  return false
+}
+
+const tie = function (turnCount) {
+  if (turnCount === 9) {
+    isGameOver = true
+    console.log('tie')
+    $('#game-message').text('Game is a tie!')
   }
 }
 
 // Fill space with a value
-const onFillSpace = function () {
-  $('#message').text('')
-  event.preventDefault()
-  let value = $(event.target).text()
-  // If tile has a mark, display error message
-  if (value === 'x' || value === 'o') {
-    $('#message').text('Error, this tile is alredy in play!')
-  } else {
-    value = $(event.target).text(turn)
+const onAction = function () {
+  // Only allow action if game is not Over
+  if (isGameOver === false) {
+    $('#message').text('')
+    let id = event.target.id
+    let value = $(event.target).text()
+    // If tile already has a mark, display error message
+    if (value === 'X' || value === 'O') {
+      $('#message').text('Error, this tile is alredy in play!')
+    } else {
+      value = $(event.target).text(turn)
+    }
+    // flip turn during event action
+    if (turn === 'X') {
+      $('#game-message').text('X\'s turn')
+      // Set gameBoard to turn value
+      gameBoard[id] = 'X'
+      turn = 'O'
+    } else if (turn === 'O') {
+      $('#game-message').text('O\'s turn')
+      gameBoard[id] = 'O'
+      turn = 'X'
+    }
+    tie(turnCount)
+    turnCount++
+    // If X wins
+  } if (winnerX(gameBoard) === true) {
+    $('#game-message').text('X wins the game!')
+    isGameOver = true
+    // If O wins
+  } else if (winnerO(gameBoard) === true) {
+    $('#game-message').text('O wins the game!')
+    isGameOver = true
   }
 }
 
-const onAction = function () {
-  turnFlip()
-  onFillSpace()
-}
-// If there have been 9 turns, game is a draw
-// increase counter each time a tile is clicked
-// increment up while there are no met winning conditions
-
-// const cases = [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [6, 4, 2]
-//
-// for(let i = 0; i < cases.length; i++) {
-//   if (event.target.id === ))
-// }
-
-// const case1 = [0, 1, 2]
-// const case2 = [3, 4, 5]
-// const case3 = [6, 7, 8]
-// const case4 = [0, 3, 6]
-// const case5 = [1, 4, 7]
-// const case6 = [2, 5, 8]
-// const case7 = [0, 4, 8]
-// const case8 = [6, 4, 2]
-
-// ------------------------------------------------------------
+// ---------------------API---------------------------------------
 // Start a game, and tell api to
 const onStartGame = function () {
   event.preventDefault()
@@ -59,8 +86,21 @@ const onStartGame = function () {
     .catch(ui.startGameFailure)
 }
 
+const onRestartGame = function () {
+  event.preventDefault()
+  isGameOver = false
+  gameBoard = ['', '', '', '', '', '', '', '', '']
+  turnCount = 0
+  $('#message').text('')
+  $('.blank').text('')
+  api.startGame()
+    .then(ui.startGameSuccess)
+    .catch(ui.startGFailure)
+}
+
 module.exports = {
   turn,
   onAction,
-  onStartGame
+  onStartGame,
+  onRestartGame
 }

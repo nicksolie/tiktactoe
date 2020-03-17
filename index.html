@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
@@ -49,6 +48,7 @@
           <legend>Start Game</legend>
           <input type="submit" value="Start">
         </form>
+        <p id="game-message"></p>
     </div>
       <div class="gameBoardContainer border row">
           <div id="0"class="col-4 box border blank">
@@ -70,6 +70,10 @@
           <div id="8"class="col-4 box border blank">
           </div>
       </div>
+      <form id="restart-game">
+        <legend>Restart Game</legend>
+        <input type="submit" value="Restart Game">
+      </form>
       </main>
       <footer>
         <nav>
