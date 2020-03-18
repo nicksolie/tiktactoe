@@ -6,6 +6,7 @@ const onSignUp = function (event) {
   event.preventDefault()
   console.log('onSignUp')
   const data = getFormFields(event.target)
+  $('#sign-up').addClass('hidden')
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)

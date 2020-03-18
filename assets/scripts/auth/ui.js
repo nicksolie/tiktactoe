@@ -19,12 +19,17 @@ const signInSuccess = function (data) {
   $('#message').text('Signed in successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('#sign-up').addClass('hidden')
+  $('#sign-out').removeClass('hidden')
+  $('#change-password').removeClass('hidden')
+  $('#start-game').removeClass('hidden')
+  $('#sign-in').addClass('hidden')
   console.log('signInSuccess data: ', data)
   store.user = data.user
 }
 
 const signInFailure = function (error) {
-  $('#message').text('Sign in error')
+  $('#message').text('Error, please try again.')
   $('#message').removeClass()
   $('#message').addClass('failed')
   console.log('signInFailure error: ', error)

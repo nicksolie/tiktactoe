@@ -12,6 +12,18 @@ const startGame = function () {
   })
 }
 
+const gameUpdate = function (data) {
+  console.log('update api.js')
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.user.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  startGame
+  startGame,
+  gameUpdate
 }

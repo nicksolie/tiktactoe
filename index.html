@@ -13,12 +13,10 @@
     <body>
       <header>
         <h1>Instructions</h1>
-      </header
+      </header>
+      <main>
       <div class="gameInfoContainer">
         <div class="gameInfo">
-          <h3>User Name</h3>
-          <h3>Score</h3>
-        </div>
       </div>
       <div class="authContainer">
         <p id="message"></p>
@@ -35,52 +33,52 @@
           <input type="password" name="credentials[password]" placeholder="Password">
           <input type="submit" value="Sign In">
         </form>
-        <form id="change-password">
+        <form id="change-password" class="hidden">
           <legend>Change Password</legend>
           <input type="password" name="passwords[old]" placeholder="Old Password">
           <input type="password" name="passwords[new]" placeholder="New Password">
           <input type="submit" value="Change Password">
         </form>
-        <form id="sign-out">
+        <form id="sign-out" class="hidden">
           <input type="submit" value="Sign Out">
         </form>
-        <form id="start-game">
+        <form id="start-game" class="hidden">
           <legend>Start Game</legend>
-          <input type="submit" value="Start">
+          <input id="start-game-button" type="submit" value="Start">
         </form>
         <p id="game-message"></p>
     </div>
-      <div class="gameBoardContainer border row">
-          <div id="0"class="col-4 box border blank">
+      <div class="gameBoardContainer row hidden">
+          <div id="0"class="col-4 box blank">
           </div>
-          <div id="1"class="col-4 box border blank">
+          <div id="1"class="col-4 box blank">
           </div>
-          <div id="2"class="col-4 box border blank">
+          <div id="2"class="col-4 box blank">
           </div>
-          <div id="3"class="col-4 box border blank">
+          <div id="3"class="col-4 box blank">
           </div>
-          <div id="4"class="col-4 box border blank">
+          <div id="4"class="col-4 box blank">
           </div>
-          <div id="5"class="col-4 box border blank">
+          <div id="5"class="col-4 box blank">
           </div>
-          <div id="6"class="col-4 box border blank">
+          <div id="6"class="col-4 box blank">
           </div>
-          <div id="7"class="col-4 box border blank">
+          <div id="7"class="col-4 box blank">
           </div>
-          <div id="8"class="col-4 box border blank">
+          <div id="8"class="col-4 box blank">
           </div>
       </div>
-      <form id="restart-game">
+      <form id="restart-game" class="hidden">
         <legend>Restart Game</legend>
         <input type="submit" value="Restart Game">
       </form>
       </main>
       <footer>
         <nav>
-          <a href="">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/nick-solie/">LinkedIn</a>
           <a href="">Portfolio</a>
-          <a href="">GitHub</a>
-          <a href="">Email</a>
+          <a href="https://github.com/nicksolie">GitHub</a>
+          <p>Email: nick.solie1@gmail.com</p>
         </nav>
       </footer>
       <h1></h1>

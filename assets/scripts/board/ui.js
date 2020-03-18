@@ -11,7 +11,17 @@ const startGameFailure = function (data) {
   $('#message').text('Error has occured in Start Game', data)
 }
 
+const gameUpdateSuccess = function (data) {
+  console.log('gameUpdateSuccess pinged')
+}
+
+const gameUpdateFailure = function (data) {
+  console.log('gameUpdateFailure pinged')
+}
+
 module.exports = {
   startGameSuccess,
-  startGameFailure
+  startGameFailure,
+  gameUpdateSuccess,
+  gameUpdateFailure
 }

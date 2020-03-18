@@ -1,14 +1,72 @@
 @import '~bootstrap/scss/bootstrap';
 
-.box {
-  height: 50px;
+body {
+  cursor: pointer;
+  text-align: center;
+  background-color: #FFFAF0;
+}
+
+.authContainer {
   justify-content: center;
-  align-items: center;
-  align-content: center;
   text-align: center;
 }
 
+.box {
+  align-items: center;
+  border: 1px solid black;
+  display: flex;
+  font-size: 30px;
+  height: 70px;
+  justify-content: center;
+  text-align: center;
+}
+
+.box:hover {
+  background-color: orange;
+}
+
 .gameBoardContainer {
-  margin: 0px 100px;
+  margin: auto;
   max-width: 300px;
+  text-align: center;
+  border: 2px solid black;
+}
+
+header {
+  background-color: #FA8072;
+  padding: 20px 0;
+}
+
+main {
+  background-color: #FFFAF0;
+}
+
+footer {
+  background-color: #FA8072;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+#message {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+#game-message {
+  text-decoration: underline;
+  font-weight: bold;
+}
+#start-game-button {
+  cursor: progress;
+}
+
+#sign-out {
+  margin: 30px;
 }

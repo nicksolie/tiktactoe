@@ -7,6 +7,7 @@ let gameBoard = ['', '', '', '', '', '', '', '', '']
 let isGameOver = false
 let turnCount = 0
 
+// // Possible win scenarios for player X
 const winnerX = function (gameBoard) {
   if (gameBoard[0] === 'X' && gameBoard[1] === 'X' && gameBoard[2] === 'X') { return true }
   if (gameBoard[3] === 'X' && gameBoard[4] === 'X' && gameBoard[5] === 'X') { return true }
@@ -19,6 +20,7 @@ const winnerX = function (gameBoard) {
   return false
 }
 
+// Possible win scenarios for player O
 const winnerO = function (gamboard) {
   if (gameBoard[0] === 'O' && gameBoard[1] === 'O' && gameBoard[2] === 'O') { return true }
   if (gameBoard[3] === 'O' && gameBoard[4] === 'O' && gameBoard[5] === 'O') { return true }
@@ -31,7 +33,7 @@ const winnerO = function (gamboard) {
   return false
 }
 
-const tie = function (turnCount) {
+const checkTie = function (turnCount) {
   if (turnCount === 9) {
     isGameOver = true
     console.log('tie')
@@ -63,8 +65,8 @@ const onAction = function () {
       gameBoard[id] = 'O'
       turn = 'X'
     }
-    tie(turnCount)
     turnCount++
+    checkTie(turnCount)
     // If X wins
   } if (winnerX(gameBoard) === true) {
     $('#game-message').text('X wins the game!')
@@ -81,11 +83,16 @@ const onAction = function () {
 const onStartGame = function () {
   event.preventDefault()
   console.log('onStartGame pinged')
+  $('.gameBoardContainer').removeClass('hidden')
+  $('#restart-game').removeClass('hidden')
+  $('#start-game').addClass('hidden')
+  $('#message').text('s')
   api.startGame()
     .then(ui.startGameSuccess)
     .catch(ui.startGameFailure)
 }
 
+// Clear the board, init a new game
 const onRestartGame = function () {
   event.preventDefault()
   isGameOver = false
@@ -99,7 +106,6 @@ const onRestartGame = function () {
 }
 
 module.exports = {
-  turn,
   onAction,
   onStartGame,
   onRestartGame
