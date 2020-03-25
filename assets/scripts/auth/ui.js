@@ -1,18 +1,18 @@
 'use strict'
 const store = require('../store')
 
-const signUpSuccess = function (data) {
+const signUpSuccess = function () {
   $('#message').text('You have successfully signed up!')
   $('#message').removeClass()
   $('#message').addClass('sucess')
-  console.log('signUpSuccess data: ', data)
+  $('#sign-up').addClass('hidden')
 }
 
-const signUpFailure = function (error) {
+const signUpFailure = function () {
   $('#message').text('A sign up error has occured')
   $('#message').removeClass()
   $('#message').addClass('failed')
-  console.log('signUpFailure error: ', error)
+  document.getElementById('sign-up').reset()
 }
 
 const signInSuccess = function (data) {
@@ -24,43 +24,54 @@ const signInSuccess = function (data) {
   $('#change-password').removeClass('hidden')
   $('#start-game').removeClass('hidden')
   $('#sign-in').addClass('hidden')
-  console.log('signInSuccess data: ', data)
+  $('#game-stats').removeClass('hidden')
+  $('#game-stats-message').removeClass('hidden')
+  document.getElementById('sign-in').reset()
   store.user = data.user
 }
 
-const signInFailure = function (error) {
+const signInFailure = function () {
   $('#message').text('Error, please try again.')
   $('#message').removeClass()
   $('#message').addClass('failed')
-  console.log('signInFailure error: ', error)
+  document.getElementById('sign-in').reset()
 }
 
-const changePasswordSuccess = function (data) {
+const changePasswordSuccess = function () {
   $('#message').text('Changed password successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
-  console.log('Changed password data is: ', data)
+  document.getElementById('change-password').reset()
 }
 
-const changePasswordFailure = function (error) {
+const changePasswordFailure = function () {
   $('#message').text('Change Password error')
   $('#message').removeClass()
   $('#message').addClass('failed')
-  console.log('changePasswordFailure error is: ', error)
+  document.getElementById('change-password').reset()
 }
 
-const signOutSuccess = function (data) {
+const signOutSuccess = function () {
   $('#message').text('Sign out successfully.')
   $('#message').removeClass()
   $('#message').addClass('success')
-  console.log('Sign out data is: ', data)
+  $('#sign-in').removeClass('hidden')
+  $('#sign-out').addClass('hidden')
+  $('#sign-up').removeClass('hidden')
+  $('#change-password').addClass('hidden')
+  $('.gameBoardContainer').addClass('hidden')
+  $('#restart-game').addClass('hidden')
+  $('#game-message').text('')
+  $('#start-game').addClass('hidden')
+  $('#game-stats').addClass('hidden')
+  $('#game-stats-message').addClass('hidden')
+  $('#game-stats-message').text('')
 }
 
-const signOutFailure = function (error) {
+const signOutFailure = function () {
   $('#message').text('Change Password error')
   $('#message').removeClass()
   $('#message').addClass('failed')
-  console.log('changePasswordFailure error is: ', error)
 }
 
 module.exports = {

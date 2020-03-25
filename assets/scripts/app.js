@@ -18,6 +18,7 @@ $(() => {
   $('.blank').on('click', boardEvents.onAction)
   $('#start-game').on('submit', boardEvents.onStartGame)
   $('#restart-game').on('submit', boardEvents.onRestartGame)
+  $('#game-stats').on('submit', boardEvents.onGetStats)
 })
 
 // $('#sign-out').on('submit', authEvents.onSignOut)

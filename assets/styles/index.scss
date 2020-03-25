@@ -57,14 +57,17 @@ footer {
 #message {
   text-decoration: underline;
   font-weight: bold;
+  height: 25px;
 }
 
 #game-message {
   text-decoration: underline;
   font-weight: bold;
+  height: 25px;
 }
-#start-game-button {
-  cursor: progress;
+
+#game-stats-message {
+  height: 25px;
 }
 
 #sign-out {
