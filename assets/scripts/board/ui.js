@@ -13,6 +13,7 @@ const startGameFailure = function (data) {
 }
 
 const gameUpdateSuccess = function (data) {
+  console.log(data)
 }
 
 const gameUpdateFailure = function (data) {

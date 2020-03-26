@@ -19,9 +19,8 @@ const winnerX = function (gameBoard) {
   if (gameBoard[6] === 'X' && gameBoard[4] === 'X' && gameBoard[2] === 'X') { return true }
   return false
 }
-
 // Possible win scenarios for player O
-const winnerO = function (gamboard) {
+const winnerO = function () {
   if (gameBoard[0] === 'O' && gameBoard[1] === 'O' && gameBoard[2] === 'O') { return true }
   if (gameBoard[3] === 'O' && gameBoard[4] === 'O' && gameBoard[5] === 'O') { return true }
   if (gameBoard[6] === 'O' && gameBoard[7] === 'O' && gameBoard[8] === 'O') { return true }
@@ -56,7 +55,7 @@ const onAction = function () {
     $('#game-message').text('Sorry game is over!')
     return
   }
-
+  // Reset the banner
   $('#message').text('')
 
   // Fill the space of a tile
@@ -69,16 +68,16 @@ const onAction = function () {
     $(event.target).text(turn)
   }
 
+  api.gameUpdate(turn, id, isGameOver)
+    .then(ui.gameUpdateSuccess)
+    .catch(ui.gameUpdateFailure)
+
   // Populate the board with turn value
   $('#game-message').text(turn + '\'s turn')
   gameBoard[id] = turn
 
   // Check if game over
-  checkIsGameOver(gameBoard)
-
-  api.gameUpdate(turn, id, isGameOver)
-    .then(ui.gameUpdateSuccess)
-    .catch(ui.gameUpdateFailure)
+  checkIsGameOver()
 
   // flip turn
   turn = turn === 'X' ? 'O' : 'X'
@@ -120,7 +119,6 @@ const onGameUpdate = function (turn, id, isGameOver) {
 }
 
 const onGetStats = function (data) {
-  console.log(data)
   event.preventDefault()
   api.getStats(data)
     .then(ui.getStatsSuccessful)

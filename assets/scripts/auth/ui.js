@@ -5,7 +5,6 @@ const signUpSuccess = function () {
   $('#message').text('You have successfully signed up!')
   $('#message').removeClass()
   $('#message').addClass('sucess')
-  $('#sign-up').addClass('hidden')
 }
 
 const signUpFailure = function () {

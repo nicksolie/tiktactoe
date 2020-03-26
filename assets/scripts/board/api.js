@@ -12,7 +12,6 @@ const startGame = function () {
 }
 
 const gameUpdate = function (turn, id, isGameOver) {
-  console.log('update api.js')
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game.id,
     method: 'PATCH',
