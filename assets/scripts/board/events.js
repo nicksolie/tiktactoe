@@ -55,7 +55,7 @@ const onAction = function () {
 
   // Only allow action if game is not over
   if (isGameOver === true) {
-    $('#game-message').text('Sorry game is over!')
+    $('#game-message').text('Sorry, game is over!')
     return
   }
   // Reset the banner

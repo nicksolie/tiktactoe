@@ -13,7 +13,6 @@ const startGameFailure = function (data) {
 }
 
 const gameUpdateSuccess = function (data) {
-  console.log(data)
 }
 
 const gameUpdateFailure = function (data) {
@@ -21,7 +20,7 @@ const gameUpdateFailure = function (data) {
 
 const getStatsSuccessful = function (data) {
   $('#game-stats').removeClass('hidden')
-  $('#game-stats-message').text('Currently ' + data.games.length + ' games')
+  $('#game-stats-message').text('You\'ve plaued ' + data.games.length + ' games')
 }
 
 const getStatsFailure = function (data) {
