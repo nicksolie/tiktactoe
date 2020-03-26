@@ -33,12 +33,15 @@ const winnerO = function () {
 }
 
 const checkIsGameOver = function () {
+  console.log('checkgameover')
   if (winnerX(gameBoard) === true) {
     $('#game-message').text('X wins the game!')
     isGameOver = true
+    console.log('checkgameoverX')
   } else if (winnerO(gameBoard) === true) {
     $('#game-message').text('O wins the game!')
     isGameOver = true
+    console.log('checkgameoverO')
     // Check for tie
   } else if (turnCount === 8) {
     $('#game-message').text('Game is a tie!')
@@ -68,19 +71,21 @@ const onAction = function () {
     $(event.target).text(turn)
   }
 
-  api.gameUpdate(turn, id, isGameOver)
-    .then(ui.gameUpdateSuccess)
-    .catch(ui.gameUpdateFailure)
-
   // Populate the board with turn value
-  $('#game-message').text(turn + '\'s turn')
   gameBoard[id] = turn
 
   // Check if game over
   checkIsGameOver()
 
+  api.gameUpdate(turn, id, isGameOver)
+    .then(ui.gameUpdateSuccess)
+    .catch(ui.gameUpdateFailure)
+
+  if (isGameOver === false) {
   // flip turn
-  turn = turn === 'X' ? 'O' : 'X'
+    turn = turn === 'X' ? 'O' : 'X'
+    $('#game-message').text(turn + '\'s turn')
+  }
 
   turnCount++
 }
