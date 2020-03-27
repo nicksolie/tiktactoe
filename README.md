@@ -3,12 +3,12 @@
 
 
 Sign Up
-!(https://github.com/nicksolie/tictactoe/blob/master/assets/images/tic-tac-toe%20sign-up%screenshot.png?raw=true "Sign Up Page")
+![](assets/images/tic-tac-toe%20sign-up%20screenshot.png "Sign Up Page")
 
 In-Game
-!(https://github.com/nicksolie/tictactoe/blob/master/assets/images/tic-tac-toe%20in-game%screenshot.png?raw=true "In-Game")
+![](assets/images/tic-tac-toe%20in-game%20screenshot.png "In-Game")
 
-* These screenshots are a work from a work in progress and may not reflect the current version.
+###### These screenshots are a work from a work in progress and may not reflect the current version.
 
 ### Development
 
@@ -47,7 +47,7 @@ A lesson I’ve learned from this project is to notice when unsuccessful problem
 
 *My wireframe from initial planning:*
 
-!(https://github.com/nicksolie/tictactoe/blob/master/assets/images/TTT%20wireframe.jpeg?raw=true "My Wireframe")
+![](assets/images/TTT%20wireframe.jpeg "My Wireframe")
 
 *My user stories from initial planning:*
 - As an unregistered player, I want to sign up so the app can track my score across games.
