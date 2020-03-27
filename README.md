@@ -3,20 +3,22 @@
 
 
 Sign Up
-!(https://i.imgur.com/OwcKaeM.png "Sign Up Page")
+!(https://github.com/nicksolie/tictactoe/blob/master/assets/tic-tac-toe%20sign-up%screenshot.png?raw=true "Sign Up Page")
 
 In-Game
-!(https://i.imgur.com/OwcKaeM.png "In-Game")
+!(https://github.com/nicksolie/tictactoe/blob/master/assets/tic-tac-toe%20in-game%screenshot.png?raw=true "In-Game")
 
 * These screenshots are a work from a work in progress and may not reflect the current version.
 
 ### Development
 
--
+Since this is the first web development application I’ve built, my development process after an initial planning phase was effectively ad-hoc. I started by creating the game board itself so I could have a representation of the primary function of the application. I then used the game board layout to guide me through the user storied I created during planning.
+
+A lesson I’ve learned from this project is to notice when unsuccessful problem solving turns into unsuccessful time management.
 
 ## Future Iterations
 
-Areas I see room for improvement:
+*Areas I see room for improvement:*
 
 *Features*
 - The inclusion of a computer opponent so users with no nearby partner can enjoy the game.
@@ -33,7 +35,7 @@ Areas I see room for improvement:
 
 ## Built With
 
-The technologies involved in this application:
+*The technologies involved in this application:*
 - JavaScript
 - jQuery
 - AJAX
@@ -41,11 +43,26 @@ The technologies involved in this application:
 - CSS
 - Git & GitHub
 
-## Planning and Wireframe
+## User Stories and Wireframe
 
-My wireframe from initial planning:
+*My wireframe from initial planning:*
 
-!(https://imgur.com/9TnEFDG)
+!(https://github.com/nicksolie/tictactoe/blob/master/assets/TTT%20wireframe.jpeg?raw=true "My Wireframe")
+
+*My user stories from initial planning:*
+- As an unregistered player, I want to sign up so the app can track my score across games.
+- As a registered player, I want to sign in so my score can be track across multiple games.
+- As a signed in user, I want to be able to change my password.
+- As a signed in user, I want to be able to log out.
+- As a signed in user, I want to be able to start a new tic tac toe.
+- As a signed in user who started a game, I want to place a permanent X to start.
+- As a signed in user who started a game, I want to rotate between X and O turns.
+- As a signed in user who started a game, I want to only place X or O on open spaces
+- As the board, I want to stay blank or flip X/O so that the user can complete a turn.
+- As a player, I want to connect three marks in a row so I can win the game or tie.
+- As a signed in user who finished a game, I do not want to be able to keep playing on that board.
+-As a player, I want the game to reset so I can play multiple games.
+-As a player, I want to be able to see how many games ive played.
 
 ## Acknowledgments
 
