@@ -6,6 +6,25 @@ body {
   background-color: #FFFAF0;
 }
 
+header {
+  background-color: #FA8072;
+  padding: 20px 0;
+}
+
+main {
+  background-color: #FFFAF0;
+}
+
+footer {
+  background-color: #FA8072;
+  position: absolute;
+  // left: 0;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+}
+
 .authContainer {
   justify-content: center;
   text-align: center;
@@ -30,24 +49,6 @@ body {
   max-width: 300px;
   text-align: center;
   border: 2px solid black;
-}
-
-header {
-  background-color: #FA8072;
-  padding: 20px 0;
-}
-
-main {
-  background-color: #FFFAF0;
-}
-
-footer {
-  background-color: #FA8072;
-  position: absolute;
-  bottom: 0;
-  text-align: center;
-  width: 100%;
-  padding: 20px 0;
 }
 
 .hidden {

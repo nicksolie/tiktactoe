@@ -3,19 +3,20 @@
 const store = require('../store.js')
 
 const startGameSuccess = function (data) {
-  $('#message').text('You have successfully started a game')
+  $('#message').text('You have successfully started a game.')
   $('#game-stats-message').text('')
   store.game = data.game
 }
 
 const startGameFailure = function (data) {
-  $('#message').text('Error has occured in Start Game')
+  $('#message').text('Error has occured in Start Game.')
 }
 
 const gameUpdateSuccess = function (data) {
 }
 
 const gameUpdateFailure = function (data) {
+  $('#message').text('An error has occured in updating the API.')
 }
 
 const getStatsSuccessful = function (data) {
@@ -24,6 +25,7 @@ const getStatsSuccessful = function (data) {
 }
 
 const getStatsFailure = function (data) {
+  ('#message').text('An error has occured in fetching stats.')
 }
 
 module.exports = {

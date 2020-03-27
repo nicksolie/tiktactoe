@@ -5,17 +5,18 @@ const signUpSuccess = function () {
   $('#message').text('You have successfully signed up!')
   $('#message').removeClass()
   $('#message').addClass('sucess')
+  document.getElementById('sign-up').reset()
 }
 
 const signUpFailure = function () {
-  $('#message').text('A sign up error has occured')
+  $('#message').text('A sign up error has occured.')
   $('#message').removeClass()
   $('#message').addClass('failed')
   document.getElementById('sign-up').reset()
 }
 
 const signInSuccess = function (data) {
-  $('#message').text('Signed in successfully')
+  $('#message').text('Signed in successfully.')
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#sign-up').addClass('hidden')
@@ -65,10 +66,11 @@ const signOutSuccess = function () {
   $('#game-stats').addClass('hidden')
   $('#game-stats-message').addClass('hidden')
   $('#game-stats-message').text('')
+  document.getElementById('change-password').reset()
 }
 
 const signOutFailure = function () {
-  $('#message').text('Change Password error')
+  $('#message').text('Change Password error.')
   $('#message').removeClass()
   $('#message').addClass('failed')
 }
