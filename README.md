@@ -2,10 +2,10 @@
 
 
 
-Sign Up
-![](assets/images/tic-tac-toe%20sign-up%20screenshot.png "Sign Up Page")
+*Sign Up*
+<img src="assets/images/tic-tac-toe%20sign-up%20screenshot.png" width="300">
 
-In-Game
+*In-Game*
 ![](assets/images/tic-tac-toe%20in-game%20screenshot.png "In-Game")
 
 ###### These screenshots are a work from a work in progress and may not reflect the current version.
