@@ -2,8 +2,6 @@
 
 Tic-tac-toe is a two-player game where players compete to strike a line of three X's or O's on a 3x3 grid. Below is my first project for General Assembly's Software Engineering Immersive.
 
-###### These screenshots are a work from a work in progress and may not reflect the current version.
-
 ### Development
 
 Since this is the first web development application I’ve built, my development process after an initial planning phase was effectively ad-hoc. I started by creating the game board itself so I could have a representation of the primary function of the application. I then used the game board layout to guide me through the user storied I created during planning.
@@ -31,6 +29,7 @@ A lesson I’ve learned from this project is to notice when unsuccessful problem
 
 ![](assets/images/TTT%20wireframe.jpeg "My Wireframe")
 
+*The current version:*
 *Sign Up:*
 
 ![](assets/images/tic-tac-toe%20sign-up%20screenshot.png "Sign Up Page")
@@ -38,6 +37,7 @@ A lesson I’ve learned from this project is to notice when unsuccessful problem
 *In-Game:*
 
 ![](assets/images/tic-tac-toe%20in-game%20screenshot.png "In-Game")
+###### These screenshots are a work from a work in progress and may not reflect the current version.
 
 ## Future Iterations
 
