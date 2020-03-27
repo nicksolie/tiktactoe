@@ -21,7 +21,7 @@ const gameUpdateFailure = function (data) {
 
 const getStatsSuccessful = function (data) {
   $('#game-stats').removeClass('hidden')
-  $('#game-stats-message').text('You\'ve plaued ' + data.games.length + ' games')
+  $('#game-stats-message').text('You\'ve played ' + data.games.length + ' games')
 }
 
 const getStatsFailure = function (data) {
