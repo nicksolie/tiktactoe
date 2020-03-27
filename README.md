@@ -25,6 +25,8 @@ A lesson I’ve learned from this project is to notice when unsuccessful problem
 -As a player, I want the game to reset so I can play multiple games.
 -As a player, I want to be able to see how many games ive played.
 
+
+
 *My wireframe from initial planning:*
 
 ![](assets/images/TTT%20wireframe.jpeg "My Wireframe")
@@ -34,10 +36,13 @@ A lesson I’ve learned from this project is to notice when unsuccessful problem
 
 ![](assets/images/tic-tac-toe%20sign-up%20screenshot.png "Sign Up Page")
 
+
 *In-Game:*
 
 ![](assets/images/tic-tac-toe%20in-game%20screenshot.png "In-Game")
 ###### These screenshots are a work from a work in progress and may not reflect the current version.
+
+
 
 ## Future Iterations
 
