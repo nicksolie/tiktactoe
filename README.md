@@ -63,6 +63,7 @@ A lesson I’ve learned from this project is to notice when unsuccessful problem
 - Styled buttons.
 - The inclusion of an instructions pages that details how the page works and what the rules of the game are.
 - Make the page mobile friendly.
+- Fully implement bootstrap for a more responsive design.
 
 ## Built With
 
