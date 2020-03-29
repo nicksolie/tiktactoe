@@ -6,6 +6,8 @@ const signUpSuccess = function () {
   $('#message').removeClass()
   $('#message').addClass('sucess')
   document.getElementById('sign-up').reset()
+  $('#sign-in').closest('form').find('input[type=password], textarea').val('')
+  $('#sign-in').closest('form').find('input[type=text], textarea').val('')
 }
 
 const signUpFailure = function () {
@@ -13,6 +15,8 @@ const signUpFailure = function () {
   $('#message').removeClass()
   $('#message').addClass('failed')
   document.getElementById('sign-up').reset()
+  $('#sign-in').closest('form').find('input[type=password], textarea').val('')
+  $('#sign-in').closest('form').find('input[type=text], textarea').val('')
 }
 
 const signInSuccess = function (data) {
@@ -37,6 +41,8 @@ const signInFailure = function () {
   $('#message').removeClass()
   $('#message').addClass('failed')
   document.getElementById('sign-in').reset()
+  $('#sign-up').closest('form').find('input[type=password], textarea').val('')
+  $('#sign-up').closest('form').find('input[type=text], textarea').val('')
 }
 
 const changePasswordSuccess = function () {
