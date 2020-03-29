@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <header>
+        <p>Welcome!</p>
+      </header>
+      <main>
+      <div class="gameInfoContainer">
+        <div class="gameInfo">
+      </div>
+      <div class="authContainer">
+        <p id="message"></p>
+        <form id="sign-up">
+          <legend>Sign Up</legend>
+          <input type="text" name="credentials[email]" placeholder="example@email.com">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <input type="submit" value="Sign Up">
+        </form>
+        <form id="sign-in">
+          <legend>Sign In</legend>
+          <input type="text" name="credentials[email]" placeholder="example@email.com">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="submit" value="Sign In">
+        </form>
+        <form id="change-password" class="hidden">
+          <legend>Change Password</legend>
+          <input type="password" name="passwords[old]" placeholder="Old Password">
+          <input type="password" name="passwords[new]" placeholder="New Password">
+          <input type="submit" value="Change Password">
+        </form>
+        <form id="sign-out" class="hidden">
+          <input type="submit" value="Sign Out">
+        </form>
+        <form id="start-game" class="hidden">
+          <legend>Start Game</legend>
+          <input id="start-game-button" type="submit" value="Start">
+        </form>
+        <p id="game-message"></p>
+    </div>
+      <div class="gameBoardContainer row hidden">
+          <div id="0"class="col-4 box blank">
+          </div>
+          <div id="1"class="col-4 box blank">
+          </div>
+          <div id="2"class="col-4 box blank">
+          </div>
+          <div id="3"class="col-4 box blank">
+          </div>
+          <div id="4"class="col-4 box blank">
+          </div>
+          <div id="5"class="col-4 box blank">
+          </div>
+          <div id="6"class="col-4 box blank">
+          </div>
+          <div id="7"class="col-4 box blank">
+          </div>
+          <div id="8"class="col-4 box blank">
+          </div>
+      </div>
+      <form id="game-stats" class="hidden">
+        <legend>Get Game Stats</legend>
+        <input type="submit" value="Get Game Stats">
+      </form>
+      <p id="game-stats-message"></p>
+      <form id="restart-game" class="hidden">
+        <legend>Restart Game</legend>
+        <input type="submit" value="Restart Game">
+      </form>
+      </main>
+      <footer>
+        <nav>
+          <!-- <a href="https://www.linkedin.com/in/nick-solie/">LinkedIn</a> -->
+          <!-- <a href="">Portfolio</a> -->
+          <!-- <a href="https://github.com/nicksolie">GitHub</a> -->
+          <p>Email: nick.solie1@gmail.com</p>
+        </nav>
+      </footer>
+      <h1></h1>
+    </body>
+</html>
