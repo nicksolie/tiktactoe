@@ -27,6 +27,8 @@ const signInSuccess = function (data) {
   $('#game-stats').removeClass('hidden')
   $('#game-stats-message').removeClass('hidden')
   document.getElementById('sign-in').reset()
+  $('#sign-up').closest('form').find('input[type=password], textarea').val('')
+  $('#sign-up').closest('form').find('input[type=text], textarea').val('')
   store.user = data.user
 }
 
@@ -73,6 +75,7 @@ const signOutFailure = function () {
   $('#message').text('Change Password error.')
   $('#message').removeClass()
   $('#message').addClass('failed')
+  document.getElementById('change-password').reset()
 }
 
 module.exports = {
